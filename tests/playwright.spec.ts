@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('basic test', async ({ page }) => {
+test('renders hero headline and navigation', async ({ page }) => {
   await page.goto('/');
-  await page.waitForSelector('h1');
-  await expect(page.locator('h1')).toContainText('Vanilla JavaScript App');
-})
+  const heroTitle = page.locator('[data-hero-title]');
+  await expect(heroTitle).toContainText('Provision a production-ready static site per customer');
+  await expect(page.locator('[data-nav-list] li')).toHaveCount(4);
+});

@@ -1,0 +1,188 @@
+backend:
+  name: github
+  repo: your-org/launchpad-sites-template # TODO: replace with your org/repo
+  branch: main
+  auth_scope: repo
+  # Configure an OAuth proxy or GitHub App for production usage.
+  # base_url: https://your-oauth-proxy.example.com
+  # auth_endpoint: /api/auth
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+display_url: "https://your-static-web-app-url"
+logo_url: "/assets/images/hero-placeholder.svg"
+
+publish_mode: editorial_workflow
+
+i18n:
+  structure: multiple_folders
+  locales: [en]
+
+collections:
+  - name: site
+    label: Site configuration
+    delete: false
+    editor:
+      preview: false
+    file: content/site.json
+    fields:
+      - label: Site meta
+        name: site
+        widget: object
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Tagline, name: tagline, widget: string, required: false }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Kicker, name: kicker, widget: string, required: false }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheading, name: subheading, widget: text, required: false }
+              - { label: Image URL, name: image, widget: string, required: false }
+              - { label: Image alt text, name: imageAlt, widget: string, required: false }
+              - label: Primary CTA
+                name: primaryCta
+                widget: object
+                fields:
+                  - { label: Label, name: label, widget: string, required: false }
+                  - { label: URL, name: href, widget: string, required: false }
+              - label: Secondary CTA
+                name: secondaryCta
+                widget: object
+                required: false
+                fields:
+                  - { label: Label, name: label, widget: string, required: false }
+                  - { label: URL, name: href, widget: string, required: false }
+      - label: Theme
+        name: theme
+        widget: object
+        collapsed: true
+        fields:
+          - { label: Background, name: "color-background", widget: color, required: false }
+          - { label: Surface, name: "color-surface", widget: color, required: false }
+          - { label: Surface alt, name: "color-surface-alt", widget: color, required: false }
+          - { label: Text, name: "color-text", widget: color, required: false }
+          - { label: Muted, name: "color-muted", widget: color, required: false }
+          - { label: Border, name: "color-border", widget: color, required: false }
+          - { label: Accent, name: "color-accent", widget: color, required: false }
+          - { label: Accent (hover), name: "color-accent-strong", widget: color, required: false }
+          - { label: Success, name: "color-success", widget: color, required: false }
+          - { label: Error, name: "color-error", widget: color, required: false }
+      - label: Navigation
+        name: navigation
+        widget: list
+        summary: "{{fields.label}} → {{fields.href}}"
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: href, widget: string }
+          - { label: New tab?, name: target, widget: select, options: ["", "_blank"], default: "" }
+      - label: Features
+        name: features
+        widget: list
+        summary: "{{fields.title}}"
+        fields:
+          - { label: Icon (emoji), name: icon, widget: string, required: false }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+      - label: Pages
+        name: pages
+        widget: object
+        collapsed: true
+        fields:
+          - label: Home
+            name: home
+            widget: object
+            fields:
+              - { label: Markdown slug, name: contentSlug, widget: string, default: home }
+              - label: Hero overrides
+                name: hero
+                widget: object
+                fields:
+                  - { label: Kicker, name: kicker, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: string }
+                  - { label: Subheading, name: subheading, widget: text, required: false }
+                  - { label: Image URL, name: image, widget: string, required: false }
+                  - { label: Image alt text, name: imageAlt, widget: string, required: false }
+                  - label: Primary CTA
+                    name: primaryCta
+                    widget: object
+                    fields:
+                      - { label: Label, name: label, widget: string, required: false }
+                      - { label: URL, name: href, widget: string, required: false }
+                  - label: Secondary CTA
+                    name: secondaryCta
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Label, name: label, widget: string, required: false }
+                      - { label: URL, name: href, widget: string, required: false }
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - { label: Markdown slug, name: contentSlug, widget: string, default: about }
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Kicker, name: kicker, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: string }
+                  - { label: Subheading, name: subheading, widget: text, required: false }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Markdown slug, name: contentSlug, widget: string, default: contact }
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Kicker, name: kicker, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: string }
+                  - { label: Subheading, name: subheading, widget: text, required: false }
+      - label: Contact form settings
+        name: contact
+        widget: object
+        fields:
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheading, name: subheading, widget: text, required: false }
+          - { label: Endpoint URL, name: endpoint, widget: string, hint: "Azure Function, webhook, or EmailJS endpoint" }
+          - { label: Pending message, name: pendingMessage, widget: string, required: false }
+          - { label: Success message, name: successMessage, widget: string, required: false }
+          - { label: Error message, name: errorMessage, widget: string, required: false }
+      - label: Footer
+        name: footer
+        widget: object
+        fields:
+          - { label: Copy, name: copy, widget: string }
+          - label: Links
+            name: links
+            widget: list
+            required: false
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: href, widget: string }
+
+  - name: pages
+    label: Markdown pages
+    files:
+      - label: Home page
+        name: home
+        file: content/pages/home.md
+        fields:
+          - { label: Title, name: title, widget: string, default: "Multi-tenant static web apps" }
+          - { label: Body, name: body, widget: markdown }
+      - label: About page
+        name: about
+        file: content/pages/about.md
+        fields:
+          - { label: Title, name: title, widget: string, default: "Architecture overview" }
+          - { label: Body, name: body, widget: markdown }
+      - label: Contact page
+        name: contact
+        file: content/pages/contact.md
+        fields:
+          - { label: Title, name: title, widget: string, default: "Contact" }
+          - { label: Body, name: body, widget: markdown }

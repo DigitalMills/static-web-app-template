@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LaunchPad Sites CMS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .boot-message {
+        text-align: center;
+        padding: 2rem;
+        max-width: 32rem;
+      }
+      .boot-message h1 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .boot-message p {
+        margin-bottom: 0.5rem;
+        color: rgba(226, 232, 240, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boot-message">
+      <h1>Loading Decap CMS…</h1>
+      <p>Replace the GitHub repo slug in <code>admin/config.yml</code> before going live.</p>
+      <p>Ensure your OAuth app or proxy is configured for the <code>/admin</code> path.</p>
+    </div>
+    <script src="https://unpkg.com/decap-cms@^2.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

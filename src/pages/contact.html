@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Multi-tenant static web app starter with Azure Static Web Apps, Decap CMS, and per-user GitHub repositories."
-    />
+    <meta name="description" content="Book a walkthrough of the LaunchPad multi-tenant static web app platform." />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>LaunchPad Sites</title>
+    <title>Contact · LaunchPad Sites</title>
   </head>
-  <body data-page="home">
+  <body data-page="contact">
     <div class="site-wrapper">
       <header class="site-header" data-site-header>
         <div class="container header-inner">
@@ -27,27 +24,11 @@
       </header>
 
       <main>
-        <section class="hero" data-hero>
-          <div class="container hero-grid">
-            <div class="hero-copy">
-              <p class="hero-kicker" data-hero-kicker></p>
-              <h1 data-hero-title>LaunchPad Sites</h1>
-              <p class="hero-subtitle" data-hero-subtitle></p>
-              <div class="hero-ctas">
-                <a class="btn primary" href="/pages/contact.html" data-primary-cta>Talk to us</a>
-                <a class="btn secondary" href="#" data-secondary-cta></a>
-              </div>
-            </div>
-            <figure class="hero-media">
-              <img src="/assets/images/hero-placeholder.svg" alt="Deployment pipeline illustration" data-hero-image />
-            </figure>
-          </div>
-        </section>
-
-        <section class="features" data-features>
+        <section class="page-hero minimal">
           <div class="container">
-            <h2>Everything teams need to launch microsites fast</h2>
-            <div class="feature-grid" data-features-list></div>
+            <p class="page-kicker" data-hero-kicker></p>
+            <h1 data-hero-title>Let's launch your next site</h1>
+            <p class="page-subtitle" data-hero-subtitle></p>
           </div>
         </section>
 
@@ -56,6 +37,35 @@
             <article class="prose" data-page-content>
               <noscript>Enable JavaScript to load the latest page content.</noscript>
             </article>
+          </div>
+        </section>
+
+        <section class="contact" data-contact>
+          <div class="container contact-grid">
+            <div class="contact-copy">
+              <h2 data-contact-headline>Book a call</h2>
+              <p data-contact-subheading></p>
+            </div>
+            <form data-contact-form>
+              <label>
+                Name
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Company or project
+                <input name="company" type="text" autocomplete="organization" />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="6" required></textarea>
+              </label>
+              <button class="btn primary" type="submit">Send</button>
+            </form>
+            <p class="contact-status" role="status" aria-live="polite" data-contact-status></p>
           </div>
         </section>
       </main>

@@ -2,3 +2,7 @@ node_modules/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+pw-report/
+src/content/
+src/assets/
+src/admin/

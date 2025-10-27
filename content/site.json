@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "LaunchPad Sites",
+    "tagline": "Blueprinted static web apps deployed in seconds",
+    "hero": {
+      "kicker": "Blueprint",
+      "headline": "Provision a production-ready static site per customer",
+      "subheading": "Ship a white-label site, GitHub repo, and Azure Static Web App for every client in under a minute.",
+      "image": "/assets/images/hero-placeholder.svg",
+      "imageAlt": "Diagram of automated Static Web App deployment",
+      "primaryCta": {
+        "label": "Request a walkthrough",
+        "href": "/pages/contact.html"
+      },
+      "secondaryCta": {
+        "label": "See the architecture",
+        "href": "/pages/about.html"
+      }
+    }
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/pages/about.html" },
+    { "label": "Contact", "href": "/pages/contact.html" },
+    { "label": "Admin", "href": "/admin/", "target": "_blank" }
+  ],
+  "features": [
+    {
+      "icon": "📦",
+      "title": "Per-user repositories",
+      "description": "Clone this template into a fresh GitHub repo for every customer using your GitHub App or automation script."
+    },
+    {
+      "icon": "🚀",
+      "title": "Azure Static Web Apps",
+      "description": "Link each repo to its own Azure SWA instance for isolated hosting, custom domains, and built-in SSL."
+    },
+    {
+      "icon": "🛠️",
+      "title": "Decap CMS editing",
+      "description": "Publish changes directly from /admin. Content edits become commits that trigger the SWA deployment workflow."
+    },
+    {
+      "icon": "⚙️",
+      "title": "Automation ready",
+      "description": "Hook an Azure Function into your signup flow to create repos, configure OAuth, and invite clients automatically."
+    }
+  ],
+  "pages": {
+    "home": {
+      "contentSlug": "home",
+      "hero": {
+        "kicker": "Blueprint",
+        "headline": "Provision a production-ready static site per customer",
+        "subheading": "Ship a white-label site, GitHub repo, and Azure Static Web App for every client in under a minute.",
+        "image": "/assets/images/hero-placeholder.svg",
+        "imageAlt": "Diagram of automated Static Web App deployment",
+        "primaryCta": { "label": "Request a walkthrough", "href": "/pages/contact.html" },
+        "secondaryCta": { "label": "See the architecture", "href": "/pages/about.html" }
+      }
+    },
+    "about": {
+      "contentSlug": "about",
+      "hero": {
+        "kicker": "Platform overview",
+        "headline": "The per-user static web app playbook",
+        "subheading": "A repeatable stack that ships content editing, automation, and hosting out of the box."
+      }
+    },
+    "contact": {
+      "contentSlug": "contact",
+      "hero": {
+        "kicker": "Talk to the team",
+        "headline": "Book a 1:1 provisioning demo",
+        "subheading": "We'll show you how to onboard clients, wire up Azure, and share best practices for scaling."
+      }
+    }
+  },
+  "contact": {
+    "headline": "Ready to launch?",
+    "subheading": "Send us a few details and we’ll spin up a personalised static site instance for you.",
+    "endpoint": "",
+    "pendingMessage": "Sending your request…",
+    "successMessage": "Thanks! Check your inbox for next steps within the next business day.",
+    "errorMessage": "We couldn't send your message. Verify the endpoint configuration and try again."
+  },
+  "footer": {
+    "copy": "© LaunchPad Sites. Built for high-margin static site services.",
+    "links": [
+      { "label": "Pricing", "href": "/#pricing" },
+      { "label": "Architecture", "href": "/pages/about.html" }
+    ]
+  },
+  "theme": {
+    "color-background": "#030712",
+    "color-surface": "rgba(2, 6, 23, 0.82)",
+    "color-surface-alt": "rgba(15, 23, 42, 0.68)",
+    "color-text": "#e2e8f0",
+    "color-muted": "#94a3b8",
+    "color-border": "rgba(148, 163, 184, 0.3)",
+    "color-accent": "#38bdf8",
+    "color-accent-strong": "#0ea5e9",
+    "color-success": "#22c55e",
+    "color-error": "#f97316"
+  }
+}
